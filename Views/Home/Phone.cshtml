@@ -1,0 +1,3001 @@
+﻿
+<style>
+
+    .loader {
+        overflow: hidden;
+        font-size: 5px;
+        margin: 50px auto;
+        text-indent: -9999em;
+        width: 11em;
+        height: 11em;
+        border-radius: 50%;
+        background: #4682B4;
+        background: -moz-linear-gradient(left, #4682B4 10%, rgba(101,171,248, 0) 42%);
+        background: -webkit-linear-gradient(left, #4682B4 10%, rgba(101,171,248, 0) 42%);
+        background: -o-linear-gradient(left, #4682B4 10%, rgba(101,171,248, 0) 42%);
+        background: -ms-linear-gradient(left, #4682B4 10%, rgba(101,171,248, 0) 42%);
+        background: linear-gradient(to right, #4682B4 10%, rgba(101,171,248, 0) 42%);
+        position: relative;
+        -webkit-animation: load3 1.4s infinite linear;
+        animation: load3 1.4s infinite linear;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+        .loader:before {
+            width: 50%;
+            height: 50%;
+            background: #4682B4;
+            border-radius: 100% 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+        }
+
+        .loader:after {
+            background: white;
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+    @@-webkit-keyframes load3 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes load3 {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<center><H2 style="color: #1E90FF">ТЕЛЕФОННЫЙ СПРАВОЧНИК</H2></center>
+<hr>
+<hr>
+<p></p>
+
+<div id="ServicesModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content" id='ServicesModalContent'>
+
+        </div>
+    </div>
+</div>
+
+<div id="ServicesModalDelete" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" id='ServicesModalDeleteContent'>
+        </div>
+    </div>
+</div>
+
+
+
+<table>
+    <tr>
+        <td colspan="2">
+            <label>&nbsp; &nbsp; Поиск сотрудника</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" class="form-control btn-block" id="SearchName" />
+        </td>
+        <td>
+            &nbsp;&nbsp;&nbsp;
+        <td>
+        <td>
+            <button type="submit" class="btn btn-info" onclick="GetLastName1()">Найти</button>
+        </td>
+</table>
+<p></p>
+
+<center>
+    <div class="loader" id="loadImg" style="display:none;">
+    </div>
+</center>
+<div id="search">
+</div>
+
+<hr>
+@*------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#concern">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Концерн "Белнефтехим"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="concern" class="collapse">
+        <table class="table">
+
+            <tr>
+                <th>ФИО</th>
+                <th>Должность</th>
+                <th>Телефон</th>
+                <th>Городской телефон</th>
+                <th>Кабинет</th>
+            </tr>
+            <tr>
+                <td>Чикилёв Александр Александрович </td>
+                <td>Председатель профкома </td>
+                <td>60-211</td>
+                <td></td>
+                <td>306</td>
+            </tr>
+            <tr>
+                <td>Минина Татьяна Степановна </td>
+                <td>Бухгалтер </td>
+                <td>60-358 </td>
+                <td></td>
+                <td>306</td>
+            </tr>
+            <tr>
+                <td>Дзергач Татьяна Васильевна </td>
+                <td>Администратор ФОК </td>
+                <td>60-436</td>
+                <td></td>
+                <td>306</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<p></p>
+@*------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#OAO">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ОАО Гомельтранснефть Дружба</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="OAO" class="collapse">
+        <p></p>
+        @*---------------------------------------------------------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#au">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Аппарат управления</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="au" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Борисенко Олег Леонидович</td>
+                        <td>генеральный директор</td>
+                        <td>60-220</td>
+                        <td></td>
+                        <td>312</td>
+                    </tr>
+                    <tr>
+                        <td>Пильвинская Наталья Анатольевна </td>
+                        <td>Секретарь-референт </td>
+                        <td>60-217</td>
+                        <td></td>
+                        <td>312</td>
+                    </tr>
+                    <tr>
+                        <td>Андрианова Наталья Остаповна</td>
+                        <td>Помощник генерального директора </td>
+                        <td>60-281</td>
+                        <td></td>
+                        <td>301</td>
+                    </tr>
+                    <tr>
+                        <td>Вериго Андрей Брониславович </td>
+                        <td>Первый заместитель генерального директора-главный инженер </td>
+                        <td>60-221 </td>
+                        <td></td>
+                        <td>413a</td>
+                    </tr>
+                    <tr>
+                        <td>Булычев Сергей Тимофеевич</td>
+                        <td>Заместитель генерального директора (по транспорту нефти)</td>
+                        <td>60-229 </td>
+                        <td></td>
+                        <td>201</td>
+                    </tr>
+                    <tr>
+                        <td>Терещенко Виктор Викторович </td>
+                        <td>Заместитель генерального директора (по экономике и финансам)</td>
+                        <td>60-221</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Петренко Андрей Александрович</td>
+                        <td>Заместитель генерального директора (по социальным вопросам,идеологической работе и корпоративной защите)</td>
+                        <td>60-340</td>
+                        <td></td>
+                        <td>219</td>
+                    </tr>
+                    <tr>
+                        <td>Карабань Андрей Геннадьевич </td>
+                        <td>Заместитель генерального директора (по капитальному строительству и ремонту)</td>
+                        <td>60-214</td>
+                        <td></td>
+                        <td>512</td>
+                    </tr>
+                    <tr>
+                        <td>Стрижнёв Анатолий Владимирович</td>
+                        <td>Ведущий специалист (по режиму секретности)</td>
+                        <td>60-218</td>
+                        <td></td>
+                        <td>501</td>
+                    </tr>
+                    <tr>
+                        <td>Тишкова Юлия Валерьевна </td>
+                        <td>Инженер по охране окружающей среды</td>
+                        <td>60-237 </td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+                    <tr>
+                        <td>Лакизо Людмила Алексеевна </td>
+                        <td>Специалист </td>
+                        <td>60-466</td>
+                        <td></td>
+                        <td>413</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*-------------------------------------------------------------------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#prof">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Профком предприятия</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="prof" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Чикилёв Александр Александрович </td>
+                        <td>Председатель профкома </td>
+                        <td>60-211</td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                    <tr>
+                        <td>Минина Татьяна Степановна </td>
+                        <td>Бухгалтер </td>
+                        <td>60-358 </td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                    <tr>
+                        <td>Дзергач Татьяна Васильевна </td>
+                        <td>Администратор ФОК </td>
+                        <td>60-436</td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        @*------------------------------------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#odik">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел делопроизводства и контроля</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="odik" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Кишеня Алеся Сергеевна  </td>
+                        <td>Начальник отдела </td>
+                        <td>60-249</td>
+                        <td></td>
+                        <td>218</td>
+                    </tr>
+                    <tr>
+                        <td>Першенкова Елена Леонидовна</td>
+                        <td>Специалист</td>
+                        <td>60-331</td>
+                        <td></td>
+                        <td>502</td>
+                    </tr>
+                    <tr>
+                        <td>Пильвинская Наталья Анатольевна</td>
+                        <td>Секретарь-референт</td>
+                        <td>60-217 </td>
+                        <td></td>
+                        <td>312</td>
+                    </tr>
+                    <tr>
+                        <td>Михневич Татьяна Валерьевна</td>
+                        <td>Делопроизводитель </td>
+                        <td>60-267</td>
+                        <td></td>
+                        <td>218</td>
+                    </tr>
+                    <tr>
+                        <td>Савенкова Ольга Викторовна</td>
+                        <td>Делопроизводитель</td>
+                        <td>60-444 </td>
+                        <td></td>
+                        <td>218</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ok">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел кадров</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="ok" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Кобрусева Ирина Валерьевна </td>
+                        <td>Начальник отдела </td>
+                        <td>60-250</td>
+                        <td></td>
+                        <td>311</td>
+                    </tr>
+                    <tr>
+                        <td>Орлова Екатерина Валерьевна</td>
+                        <td>Специалист по кадрам</td>
+                        <td>60-282</td>
+                        <td></td>
+                        <td>106</td>
+                    </tr>
+                    <tr>
+                        <td>Ковалёва Ирина Валентиновна</td>
+                        <td>Специалист по кадрам</td>
+                        <td>60-970 </td>
+                        <td></td>
+                        <td>106</td>
+                    </tr>
+                    <tr>
+                        <td>Терехова Светлана Васильевна</td>
+                        <td>Специалист по кадрам </td>
+                        <td>60-394</td>
+                        <td></td>
+                        <td>106</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ob">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел безопасности</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="ob" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Будюхин Денис Русланович </td>
+                        <td>Начальник отдела </td>
+                        <td>60-994</td>
+                        <td></td>
+                        <td>222</td>
+                    </tr>
+                    <tr>
+                        <td>Рубанов Виталий Владимирович</td>
+                        <td>Ведущий специалист</td>
+                        <td>60-234</td>
+                        <td></td>
+                        <td>221</td>
+                    </tr>
+                    <tr>
+                        <td>Астряков Сергей Евгеньевич</td>
+                        <td>Ведущий специалист</td>
+                        <td>60-991 </td>
+                        <td></td>
+                        <td>220</td>
+                    </tr>
+                    <tr>
+                        <td>Максименко Александр Сергеевич </td>
+                        <td>Специалист</td>
+                        <td>60-988</td>
+                        <td></td>
+                        <td>220</td>
+                    </tr>
+                    <tr>
+                        <td>Мицкевич Сергей Николаевич</td>
+                        <td>Специалист</td>
+                        <td>60-989</td>
+                        <td></td>
+                        <td>221</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#buh">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Бухгалтерия</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="buh" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Яцко Людмила Владимировна</td>
+                        <td>Главный бухгалтер</td>
+                        <td>60-225 </td>
+                        <td>79-72-25, 8-033-325-72-25</td>
+                        <td>309</td>
+                    </tr>
+                    <tr>
+                        <td>Песина Наталья Александровна</td>
+                        <td>Заместитель главного бухгалтера</td>
+                        <td>60-324 </td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Морозова Ирина Анатольевна</td>
+                        <td>Ведущий бухгалтер</td>
+                        <td>60-489</td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Антоненко Елена Михайловна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-236</td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                    <tr>
+                        <td>Журавлёва Татьяна Александровна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-359</td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                    <tr>
+                        <td>Семенчукова Евгения Владимировна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-253</td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Баранова Анна Владимировна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-369</td>
+                        <td></td>
+                        <td>308</td>
+                    </tr>
+                    <tr>
+                        <td>Разуванова Мария Васильевна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-271 </td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Макаревич Людмила Васильевна</td>
+                        <td>Бухгалтер</td>
+                        <td>57-572 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Кузнецова Екатерина Валентиновна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-252</td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Мазаник Лариса Павловна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-902 </td>
+                        <td></td>
+                        <td>306</td>
+                    </tr>
+                    <tr>
+                        <td>Германчук Наталья Владимировна</td>
+                        <td>Бухгалтер</td>
+                        <td>60-289</td>
+                        <td></td>
+                        <td>303</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#kro">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Контрольно-ревизионный отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="kro" class="collapse">
+                <table class="table">
+
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Черненко Виталий Владимирович</td>
+                        <td>Начальник отдела</td>
+                        <td>60-987 </td>
+                        <td></td>
+                        <td>316</td>
+                    </tr>
+                    <tr>
+                        <td>Песина Наталья Александровна</td>
+                        <td>Заместитель главного бухгалтера</td>
+                        <td>60-324 </td>
+                        <td></td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>Блоцкий Виталий Александрович </td>
+                        <td>Ревизор</td>
+                        <td>60-978</td>
+                        <td></td>
+                        <td>325</td>
+                    </tr>
+                    <tr>
+                        <td>Погарцева Ирина Александровна </td>
+                        <td>Ревизор</td>
+                        <td>60-488</td>
+                        <td></td>
+                        <td>325</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#kroau">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа внутреннего аудита Контрольно-ревизионного отдела</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="kroau" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Скворок Наталья Николаевна </td>
+                        <td>Руководитель группы</td>
+                        <td>60-243</td>
+                        <td></td>
+                        <td>325</td>
+                    </tr>
+                    <tr>
+                        <td>Бекаревич Владимир Иванович </td>
+                        <td>Ведущий ревизор</td>
+                        <td>60-311</td>
+                        <td></td>
+                        <td>315</td>
+                    </tr>
+                    <tr>
+                        <td>Бурак Евгений Николаевич </td>
+                        <td>Ревизор</td>
+                        <td>60-365</td>
+                        <td></td>
+                        <td>315</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#plan">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел экономического анализа и планирования</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="plan" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Козовская Татьяна Петровна  </td>
+                        <td>Начальник отдела</td>
+                        <td>60-290</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Ратомская Ольга Анатольевна</td>
+                        <td>Экономист по планированию</td>
+                        <td>60-426</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Ковалёва Екатерина Михайловна  </td>
+                        <td>Экономист по планированию</td>
+                        <td>60-265</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Архиповцова Екатерина Михайловна</td>
+                        <td>Экономист</td>
+                        <td>60-465</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#zp">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа труда и заработной платы</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="zp" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Потапенко Татьяна Викторовна</td>
+                        <td>Начальник группы</td>
+                        <td>60-338</td>
+                        <td></td>
+                        <td>324</td>
+                    </tr>
+                    <tr>
+                        <td>Балычевцева Виктория Викторовна </td>
+                        <td>Экономист</td>
+                        <td>60-923</td>
+                        <td></td>
+                        <td>324</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#fin">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Финансовый отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="fin" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Артёменко Дмитрий Леонидович </td>
+                        <td>Начальник отдела</td>
+                        <td>60-335</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Рубанова Нэля Анатольевна</td>
+                        <td>Ведущий экономист</td>
+                        <td>60-325 </td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Найдёнова Татьяна Владимировна</td>
+                        <td>Ведущий экономист</td>
+                        <td>60-471</td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+                    <tr>
+                        <td>Марцинкевич Дмитрий Владимирович </td>
+                        <td>Экономист</td>
+                        <td>60-321 </td>
+                        <td></td>
+                        <td>321</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#urist">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Юридический отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="urist" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Лащенко Юрий Алексеевич </td>
+                        <td>Начальник отдела</td>
+                        <td>60-327</td>
+                        <td></td>
+                        <td>310</td>
+                    </tr>
+                    <tr>
+                        <td>Кузьмиченко Владимир Александрович</td>
+                        <td>Юрисконсульт</td>
+                        <td>60-286</td>
+                        <td></td>
+                        <td>314</td>
+                    </tr>
+                    <tr>
+                        <td>Масальский Вадим Владимирович</td>
+                        <td>Юрисконсульт</td>
+                        <td>60-274</td>
+                        <td></td>
+                        <td>314</td>
+                    </tr>
+                    <tr>
+                        <td>Балябина Ирина Викторовна </td>
+                        <td>Юрисконсульт</td>
+                        <td>60-360</td>
+                        <td></td>
+                        <td>314</td>
+                    </tr>
+                    <tr>
+                        <td>Сырокваша Алексей Михайлович</td>
+                        <td>Юрисконсульт</td>
+                        <td>60-302 </td>
+                        <td></td>
+                        <td>325</td>
+                    </tr>
+                    <tr>
+                        <td>Демидова Людмила Олеговна</td>
+                        <td>Юрисконсульт</td>
+                        <td>60-283</td>
+                        <td></td>
+                        <td>314</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#neft">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел по нефти, нефтепродуктам и управления качеством</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="neft" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Киреев Геннадий Анатольевич </td>
+                        <td>Начальник отдела</td>
+                        <td>60-232, 60-407</td>
+                        <td></td>
+                        <td>323</td>
+                    </tr>
+                    <tr>
+                        <td>Божко Юлия Александровна</td>
+                        <td>Инженер</td>
+                        <td>60-388</td>
+                        <td></td>
+                        <td>322</td>
+                    </tr>
+                    <tr>
+                        <td>Прокопенко Кирилл Станиславович </td>
+                        <td>Инженер</td>
+                        <td>60-269</td>
+                        <td></td>
+                        <td>323</td>
+                    </tr>
+                    <tr>
+                        <td>Чернышёва Ольга Анатольевна</td>
+                        <td>Инженер</td>
+                        <td>60-212</td>
+                        <td></td>
+                        <td>322</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#mts">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел материально-технического снабжения</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="mts" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Казаченко Марина Анатольевна</td>
+                        <td>Начальник отдела</td>
+                        <td>60-260</td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Воронович Елена Михайловна</td>
+                        <td>Экономист</td>
+                        <td>60-973</td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Бобович Ольга Валентиновна </td>
+                        <td>Инженер</td>
+                        <td>60-261 </td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Силков Владимир Владимирович </td>
+                        <td>Специалист</td>
+                        <td>60-215</td>
+                        <td></td>
+                        <td>503</td>
+                    </tr>
+                    <tr>
+                        <td>Конончик Андрей Александрович </td>
+                        <td>Инженер</td>
+                        <td>60-932</td>
+                        <td></td>
+                        <td>503</td>
+                    </tr>
+                    <tr>
+                        <td>Моргунов Станислав Владимирович</td>
+                        <td>Инженер</td>
+                        <td>60-933</td>
+                        <td></td>
+                        <td>503</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#kompl">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа комплектации оборудования и материалов в строительстве</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="kompl" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Филипенко Роман Викторович </td>
+                        <td>Руководитель группы</td>
+                        <td>60-390</td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Чугай Евгений Анатольевич </td>
+                        <td>Ведущий инженер</td>
+                        <td>60-386 </td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Буланов Анатолий Анатольевич</td>
+                        <td>Инженер</td>
+                        <td>60-385 </td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+                    <tr>
+                        <td>Мажако Василий Иванович</td>
+                        <td>Инженер</td>
+                        <td>60-934 </td>
+                        <td></td>
+                        <td>506</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#pto">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Производственно-технический отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="pto" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Бураков Денис Борисович</td>
+                        <td>Начальник отдела</td>
+                        <td>60-389</td>
+                        <td></td>
+                        <td>509</td>
+                    </tr>
+                    <tr>
+                        <td>Козлов Александр Евгеньевич</td>
+                        <td>Руководитель группы технического надзора</td>
+                        <td>60-348</td>
+                        <td></td>
+                        <td>509</td>
+                    </tr>
+                    <tr>
+                        <td>Головчик Иван Романович</td>
+                        <td>Инженер 2 кат. группы технического надзора</td>
+                        <td>52-231</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Грапов Виталий Александрович</td>
+                        <td>Инженер группы технического надзора</td>
+                        <td>60-922 </td>
+                        <td></td>
+                        <td>510</td>
+                    </tr>
+                    <tr>
+                        <td>Шупейко Евгений Александрович</td>
+                        <td>Инженер группы технического надзора ф-ал "Новополоцк" </td>
+                        <td>25-23-26</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Исанов Дмитрий Михайлович </td>
+                        <td>Инженер</td>
+                        <td>60-361</td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+                    <tr>
+                        <td>Лагутин Игорь Владимирович</td>
+                        <td>Инженер</td>
+                        <td>60-495 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Суднеко Евгений Александрович </td>
+                        <td>Инженер</td>
+                        <td>60-977 </td>
+                        <td></td>
+                        <td>510</td>
+                    </tr>
+                    <tr>
+                        <td>Рыбаченко Евгений Владимирович</td>
+                        <td>Инженер</td>
+                        <td>60-920</td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+                    <tr>
+                        <td>Бруснев Владислав Андреевич </td>
+                        <td>Инженер</td>
+                        <td>60-345</td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+                    <tr>
+                        <td>Карпинский Роман Витальевич</td>
+                        <td>Инженер</td>
+                        <td>60-983 </td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+                    <tr>
+                        <td>Самсонова Наталья Александровна</td>
+                        <td>Инженер</td>
+                        <td>60-391 </td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+                    <tr>
+                        <td>Быданов Роман Олегович</td>
+                        <td>Инженер</td>
+                        <td>60-491 </td>
+                        <td></td>
+                        <td>511</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#oe">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел эксплуатации</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="oe" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Лизунов Игорь Валерьевич</td>
+                        <td>Начальник отдела</td>
+                        <td>60-256 </td>
+                        <td></td>
+                        <td>409</td>
+                    </tr>
+                    <tr>
+                        <td>Булатчик Андрей Леонидович </td>
+                        <td>Заместитель начальника отдела</td>
+                        <td>60-251 </td>
+                        <td></td>
+                        <td>409</td>
+                    </tr>
+                    <tr>
+                        <td>Головчик Иван Романович</td>
+                        <td>Инженер 2 кат. группы технического надзора</td>
+                        <td>52-231</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Василевский Сергей Михайлович </td>
+                        <td>Инженер</td>
+                        <td>60-396 </td>
+                        <td></td>
+                        <td>408</td>
+                    </tr>
+                    <tr>
+                        <td>Терновский Андрей Александрович </td>
+                        <td>Ведущий инженер</td>
+                        <td>60-456</td>
+                        <td></td>
+                        <td>409</td>
+                    </tr>
+                    <tr>
+                        <td>Божко Дмитрий Иванович</td>
+                        <td>Ведущий инженер-технолог</td>
+                        <td>60-248</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Купреев Сергей Григорьевич</td>
+                        <td>Ведущий инженер по ЭХЗ </td>
+                        <td>60-486</td>
+                        <td></td>
+                        <td>406</td>
+                    </tr>
+                    <tr>
+                        <td>Воробьёв Владимир Владимирович</td>
+                        <td>Инженер</td>
+                        <td>60-380 </td>
+                        <td></td>
+                        <td>409</td>
+                    </tr>
+                    <tr>
+                        <td>Лашук Геннадий Александрович </td>
+                        <td>Инженер (гр.диагностики)</td>
+                        <td>60-244</td>
+                        <td></td>
+                        <td>408</td>
+                    </tr>
+                    <tr>
+                        <td>Чепцов Дмитрий Евгеньевич</td>
+                        <td>Ведущий инженер</td>
+                        <td>60-392 </td>
+                        <td></td>
+                        <td>408</td>
+                    </tr>
+                    <tr>
+                        <td>Руденко Виталий Иванович</td>
+                        <td>Инженер (гр.диагностики)</td>
+                        <td>60-355 </td>
+                        <td></td>
+                        <td>408</td>
+                    </tr>
+                    <tr>
+                        <td>Марков Максим Григорьевич </td>
+                        <td>Инженер по ЭХЗ</td>
+                        <td>60-219</td>
+                        <td></td>
+                        <td>406</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#tto">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Товаро-транспортный отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="tto" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Пащенко Николай Владимирович </td>
+                        <td>Начальник отдела</td>
+                        <td>60-288  </td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Кресс Виктор Тагенбертович </td>
+                        <td>Ведущий специалист</td>
+                        <td>60-223, 60-224</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Шульга Геннадий Николаевич</td>
+                        <td>Ведущий специалист</td>
+                        <td>60-223, 60-224</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Гонтарев Леонид Васильевич </td>
+                        <td>Ведущий специалист</td>
+                        <td>60-223, 60-224 </td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Лопатенко Сергей Александрович </td>
+                        <td>Ведущий специалист</td>
+                        <td>60-223, 60-224</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Павлов Сергей Алексеевич </td>
+                        <td>Ведущий специалист</td>
+                        <td>60-223, 60-224</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Варава Дмитрий Леонидович</td>
+                        <td>Ведущий специалист</td>
+                        <td>60-486</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Кротенок Владимир Владимирович</td>
+                        <td>Специалист</td>
+                        <td>60-239, 60-411</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Сергеенко Игорь Викторович</td>
+                        <td>Специалист</td>
+                        <td>60-239, 60-411 </td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+                    <tr>
+                        <td>Шавыров Максим Александрович</td>
+                        <td>Специалист</td>
+                        <td>60-239, 60-411</td>
+                        <td></td>
+                        <td>212</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#asutpis">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел АСУТПиС</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="asutpis" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Новик Иван Иванович</td>
+                        <td>Начальник отдела</td>
+                        <td>60-315</td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+                    <tr>
+                        <td>Соловьёв Максим Евгеньевич</td>
+                        <td>Ведущий инженер</td>
+                        <td>60-255</td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+                    <tr>
+                        <td>Малашенко Анастасия Александровна</td>
+                        <td>Инженер</td>
+                        <td>60-336</td>
+                        <td></td>
+                        <td>206</td>
+                    </tr>
+                    <tr>
+                        <td>Самусев Владимир Александрович </td>
+                        <td>Руководитель группы системных инженеров</td>
+                        <td>60-235</td>
+                        <td></td>
+                        <td>207</td>
+                    </tr>
+                    <tr>
+                        <td>Артёменко Александр Сергеевич </td>
+                        <td>Инженер</td>
+                        <td>60-316</td>
+                        <td></td>
+                        <td>206</td>
+                    </tr>
+                    <tr>
+                        <td>Олех Андрей Викторович </td>
+                        <td>Инженер-электроник</td>
+                        <td>60-937</td>
+                        <td></td>
+                        <td>207</td>
+                    </tr>
+                    <tr>
+                        <td>Хиревич Игорь Эдуардович</td>
+                        <td>Ведущий инженер программист </td>
+                        <td>60-270</td>
+                        <td></td>
+                        <td>207</td>
+                    </tr>
+                    <tr>
+                        <td>Кочан Дмитрий Владимирович </td>
+                        <td>Инженер-программист</td>
+                        <td>60-238  </td>
+                        <td></td>
+                        <td>207</td>
+                    </tr>
+                    <tr>
+                        <td>Халява Николай Михайлович</td>
+                        <td>Инженер-программист</td>
+                        <td>60-462</td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+                    <tr>
+                        <td>Авчинников Николай Александрович</td>
+                        <td>Руководитель группы связи</td>
+                        <td>60-201 </td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+                    <tr>
+                        <td>Грищенко Александр Николаевич </td>
+                        <td>Ведущий инженер связи</td>
+                        <td>60-203 </td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+                    <tr>
+                        <td>Пяткин Виталий Владимирович</td>
+                        <td>Инженер связи</td>
+                        <td>60-202</td>
+                        <td></td>
+                        <td>204</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#oge">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел главного энергетика</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="oge" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Белодед Александр Александрович </td>
+                        <td>Главный энергетик </td>
+                        <td>60-227 </td>
+                        <td></td>
+                        <td>412</td>
+                    </tr>
+                    <tr>
+                        <td>Зуев Эдуард Михайлович </td>
+                        <td>Ведущий инженер</td>
+                        <td>60-231 </td>
+                        <td></td>
+                        <td>412</td>
+                    </tr>
+                    <tr>
+                        <td>Хоптинец Андрей Анатольевич </td>
+                        <td>Инженер</td>
+                        <td>60-372 </td>
+                        <td></td>
+                        <td>412</td>
+                    </tr>
+                    <tr>
+                        <td>Евминов Алексей Леонидович</td>
+                        <td>Инженер</td>
+                        <td>60-230</td>
+                        <td></td>
+                        <td>412</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ogm">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел главного механика</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="ogm" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Бордовский Михаил Александрович </td>
+                        <td>Главный механик </td>
+                        <td>60-226</td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <td>Веремеев Геннадий Леонидович</td>
+                        <td>Ведущий инженер</td>
+                        <td>60-364 </td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <td>Теленченко Сергей Антонович </td>
+                        <td>Ведущий инженер</td>
+                        <td>60-264</td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <td>Делец Александр Леонидович</td>
+                        <td>Инженер</td>
+                        <td>60-452</td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <td>Юркевич Олег Владимирович </td>
+                        <td>Инженер</td>
+                        <td>60-490 </td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+                    <tr>
+                        <td>Беленков Сергей Викторович</td>
+                        <td>Инженер</td>
+                        <td>60-326</td>
+                        <td></td>
+                        <td>410</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#asup">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел АСУП</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="asup" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Акушко Александр Васильевич </td>
+                        <td>Начальник отдела</td>
+                        <td>60-383</td>
+                        <td></td>
+                        <td>105</td>
+                    </tr>
+                    <tr>
+                        <td>Жиженский Александр Николаевич</td>
+                        <td>Ведущий инженер</td>
+                        <td>60-930 </td>
+                        <td></td>
+                        <td>104</td>
+                    </tr>
+                    <tr>
+                        <td>Максименко Василий Николаевич</td>
+                        <td>Администратор системный</td>
+                        <td>60-464</td>
+                        <td></td>
+                        <td>105</td>
+                    </tr>
+                    <tr>
+                        <td>Попков Александр Викторович</td>
+                        <td>Администратор системный</td>
+                        <td>60-975</td>
+                        <td></td>
+                        <td>105/td>
+                    </tr>
+                    <tr>
+                        <td>Азявчиков Павел Петрович</td>
+                        <td>Программист системный</td>
+                        <td>60-279 </td>
+                        <td></td>
+                        <td>104</td>
+                    </tr>
+                    <tr>
+                        <td>Самусенко Олег Викторович</td>
+                        <td>Инженер-программист</td>
+                        <td>60-376</td>
+                        <td></td>
+                        <td>104</td>
+                    </tr>
+                    <tr>
+                        <td>Мищенко Роман Васильевич</td>
+                        <td>Инженер-программист</td>
+                        <td>60-497 </td>
+                        <td></td>
+                        <td>105</td>
+                    </tr>
+                    <tr>
+                        <td>Сивуха Александр Владимирович</td>
+                        <td>Инженер-программист</td>
+                        <td>60-463</td>
+                        <td></td>
+                        <td>104</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gm">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа метрологии</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="gm" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Рубанов Александр Сергеевич </td>
+                        <td>Главный метролог</td>
+                        <td>60-272</td>
+                        <td></td>
+                        <td>209</td>
+                    </tr>
+                    <tr>
+                        <td>Шилов Николай Александрович</td>
+                        <td>Инженер по метрологии</td>
+                        <td>60-929</td>
+                        <td></td>
+                        <td>209</td>
+                    </tr>
+                    <tr>
+                        <td>Пьяных Александр Александрович</td>
+                        <td>Инженер по метрологии</td>
+                        <td>60-280</td>
+                        <td></td>
+                        <td>209</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ot">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел охраны труда, промышленной и пожарной безопасности</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="ot" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+
+                    <tr>
+                        <td>Минин Александр Владимирович</td>
+                        <td>Начальник отдела </td>
+                        <td>60-247</td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+                    <tr>
+                        <td>Радюк Александр Геннадьевич</td>
+                        <td>Ведущий инженер по пожарной безопасности </td>
+                        <td>60-437 </td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+                    <tr>
+                        <td>Сильченко Александр Сергеевич </td>
+                        <td>Инженер (по промышленной безопасности)</td>
+                        <td>60-475</td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+                    <tr>
+                        <td>Гриценок Владимир Александрович</td>
+                        <td>Инженер (по защите населения и территории от чрезвычайных ситуаций)</td>
+                        <td>60-448</td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+                    <tr>
+                        <td>Балашов Иван Александрович</td>
+                        <td>Инженер (по промышленной безопасности) </td>
+                        <td>60-347</td>
+                        <td></td>
+                        <td>411</td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#osr">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Отдел социального развития</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="osr" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Рудинский Олег Валерьевич</td>
+                        <td>Начальник отдела </td>
+                        <td>60-354</td>
+                        <td></td>
+                        <td>316</td>
+                    </tr>
+                    <tr>
+                        <td>Ряховский Сергей Евгеньевич </td>
+                        <td>Ведущий специалист по сельскому хозяйству </td>
+                        <td>60-246</td>
+                        <td></td>
+                        <td>101</td>
+                    </tr>
+                    <tr>
+                        <td>Васильева Елена Александровна</td>
+                        <td>Ведущий специалист</td>
+                        <td>60-350 </td>
+                        <td></td>
+                        <td>316</td>
+                    </tr>
+                    <tr>
+                        <td>Блоцкая Марина Васильевна</td>
+                        <td>Специалист</td>
+                        <td>60-938 </td>
+                        <td></td>
+                        <td>316</td>
+                    </tr>
+                    <tr>
+                        <td>Лозко Татьяна Александровна </td>
+                        <td>Специалист</td>
+                        <td>60-985</td>
+                        <td></td>
+                        <td>316</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#axo">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Административно-хозяйственный отдел</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="axo" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Серафимович Виктор Константинович</td>
+                        <td>Начальник отдела </td>
+                        <td>60-245, 60-374</td>
+                        <td></td>
+                        <td>315</td>
+                    </tr>
+                    <tr>
+                        <td>Соднова Галина Николаевна</td>
+                        <td>Зав.хозяйством </td>
+                        <td>60-216</td>
+                        <td></td>
+                        <td>315</td>
+                    </tr>
+                    <tr>
+                        <td>Игнатовская Галина Геннадьевна </td>
+                        <td>Уборщик (служебных) помещений </td>
+                        <td>60-371</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Флокосу Галина Алексе</td>
+                        <td>Уборщик (служебных) помещений/территории</td>
+                        <td>60-371 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Мищенко Инна Михайловна</td>
+                        <td>Уборщик (служебных) помещений </td>
+                        <td>60-371</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Моисеенко Лариса Леонидовна </td>
+                        <td>Уборщик (служебных) помещений/территории</td>
+                        <td>60-371</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Харькова Анна Михайловна</td>
+                        <td>Уборщик (служебных) помещений/территории</td>
+                        <td>60-371 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Арещенко Ольга Петровна </td>
+                        <td>Уборщик (служебных) помещений/территории</td>
+                        <td>60-371</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Силивончик Лидия Григорьевна</td>
+                        <td>Уборщик (служебных) помещений/территории</td>
+                        <td>60-434 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Писаренко Владислав Николаевич</td>
+                        <td>Слесарь-сантехник (УКРиОО ЦБПО) </td>
+                        <td>60-421,60-378</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ohrana">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа "Охрана"</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="ohrana" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Алейник Сергей Михайлович </td>
+                        <td>Начальник</td>
+                        <td>60-366</td>
+                        <td></td>
+                        <td>102</td>
+                    </tr>
+                    <tr>
+                        <td>Гость Евгений Сергеевич </td>
+                        <td>Специалист</td>
+                        <td>60-992</td>
+                        <td></td>
+                        <td>102</td>
+                    </tr>
+                    <tr>
+                        <td>Довбня Василий Михайлович</td>
+                        <td>Охранник</td>
+                        <td>60-339</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Шабала Ростислав Владимирович</td>
+                        <td>Охранник</td>
+                        <td>60-339 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ермолаев Вячеслав Владимирович</td>
+                        <td>Охранник</td>
+                        <td>60-339</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Гачников Сергей Николаевич </td>
+                        <td>Охранник</td>
+                        <td>60-339</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Андрановская Екатерина Александровна</td>
+                        <td>Охранник</td>
+                        <td>60-339</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Кулеш Михаил Михайлович</td>
+                        <td>Контролер (старший)</td>
+                        <td>57-556 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Кренгольд Пётр Александрович</td>
+                        <td>Контролер</td>
+                        <td>57-556</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Кураш Артём Анатольевич</td>
+                        <td>Контролер</td>
+                        <td>57-556</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Мойсеенко Алла Петровна</td>
+                        <td>Контролер</td>
+                        <td>57-556</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Оснач Алексей Федорович </td>
+                        <td>Контролер</td>
+                        <td>57-556</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#svaz">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Группа связи УКИПАиС</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="svaz" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Кондратюк Сергей Николаевич</td>
+                        <td>Ведущий инженер гр. связи УС Управления</td>
+                        <td>60-322</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Антоненко Дмитрий Васильевич</td>
+                        <td>Инженер гр.связи УС Управления</td>
+                        <td>60-303</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Блинков Виталий Сергеевич</td>
+                        <td>Электромеханик</td>
+                        <td>60-208</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Пигулевский Александр Николаевич</td>
+                        <td>Электромеханик</td>
+                        <td>60-208</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Костюков Андрей Викторович</td>
+                        <td>Электромеханик</td>
+                        <td>60-208</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Сидоренко Евгений Иванович</td>
+                        <td>Электромеханик</td>
+                        <td>60-208</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+                    <tr>
+                        <td>Грищенко Сергей Николаевич </td>
+                        <td>Электромеханик</td>
+                        <td>60-208</td>
+                        <td></td>
+                        <td>108</td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+        <div class="container">
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sklad">+</button>
+                    </td>
+                    <td style="color: #4682B4">
+                        <b>Центральный склад</b>
+                    </td>
+
+                </tr>
+            </table>
+            <div id="sklad" class="collapse">
+                <table class="table">
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Должность</th>
+                        <th>Телефон</th>
+                        <th>Городской телефон</th>
+                        <th>Кабинет</th>
+                    </tr>
+                    <tr>
+                        <td>Данченко Александр Дмитриевич </td>
+                        <td>Заведующий центральным складом</td>
+                        <td>57-641</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Грудовенко Наталья Николаевна </td>
+                        <td>Техник по учету</td>
+                        <td>57-549</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Тарасенко Алла Владимировна</td>
+                        <td>Кладовщик </td>
+                        <td>57-799 </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Белкина Надежда Ивановна</td>
+                        <td>Кладовщик</td>
+                        <td>57-796</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+
+                </table>
+
+            </div>
+        </div>
+        @*---------------------------------------------------------------*@
+
+    </div>
+</div>
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#pred">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Представительство ОАО "Гомельтранснефть Дружба" в г. Минске</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="pred" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gomel">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>НПС "Гомель"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="gomel" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#zasch">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>НПС "Защебье"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="zasch" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#mozyr">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ЛПДС "Мозырь"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="mozyr" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#turov">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>НПС "Туров"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="turov" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#pinsk">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>НПС "Пинск"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="pinsk" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#kobrin">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>НПС "Кобрин"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="kobrin" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#fptn">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ФПТН "Новополоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="ftpn" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#polock">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ЛПДС "Полоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="polock" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#bpo">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>БПО База производственного обслуживания"Новополоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="bpo" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#usp">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Унитарное сельскохозяйственное предпиятие "Дружбинец"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="usp" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gnps">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ГНПС "Полоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="gnps" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#laborat">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Лаборатория филиала по ТН "Новополоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="laborat" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ohrana">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Ведомственная охрана филиала по ТН "Новополоцк"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="ohrana" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#gorki">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ЛПДС "Горки"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="gorki" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#senno">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ЛПДС "Сенно"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="senno" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#disna">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>ЛПДС "Дисна"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="disna" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#unecha">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Пункт приема нефти "Унеча"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="unecha" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#adam">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Пункт сдачи нефти "Адамова заствава"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="adam" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#rechica">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Пункт приемо-сдачи нефти "Речица"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="rechica" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cbpo">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Центральная база производственного обслуживания</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="cbpo" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#milograd">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Подразделение БО "Милоград" филиала "Центральная база производственного обслуживания"</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="milograd" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+<p></p>
+@*---------------------------------------------------------------*@
+<div class="container">
+    <table>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#pk">+</button>
+            </td>
+            <td style="color: #4682B4">
+                <b>Производственный комбинат</b>
+            </td>
+
+        </tr>
+    </table>
+    <div id="pk" class="collapse">
+        <table class="table">
+
+            <tr>
+                <td>представитель</td>
+                <td>должность</td>
+                <td>телефон</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+@*---------------------------------------------------------------*@
+

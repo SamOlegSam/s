@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+@model IEnumerable<s.Models.Phone>
+<table class="table">
+
+
+    <tr>
+        <th style="background-color:#f8fcff">
+            Фамилия
+        </th>
+        <th style="background-color:#f8fcff">
+            Должность
+        </th>
+        <th style="background-color:#f8fcff">
+            Телефон
+        </th>
+
+
+        <th style="background-color:#f8fcff"></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+
+        <tr tr class="odd">
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doljnost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkPhone)
+            </td>
+        </tr>
+    }
+</table>

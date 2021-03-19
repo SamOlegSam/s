@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище GENERALModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "GENERAL.dbo._get_ok_days3" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="_get_ok_days3">
+          <Key>
+            <PropertyRef Name="podr" />
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="fio" Type="varchar" MaxLength="60" />
+          <Property Name="datbegin" Type="datetime" />
+          <Property Name="doljn" Type="varchar" MaxLength="255" />
+          <Property Name="dday" Type="int" />
+          <Property Name="dmonth" Type="int" />
+          <Property Name="podr" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cod" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nrec" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="Хранилище GENERALModelContainer">
+          <EntitySet Name="_get_ok_days3" EntityType="Self._get_ok_days3" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [_get_ok_days3].[fio] AS [fio], 
+    [_get_ok_days3].[datbegin] AS [datbegin], 
+    [_get_ok_days3].[doljn] AS [doljn], 
+    [_get_ok_days3].[dday] AS [dday], 
+    [_get_ok_days3].[dmonth] AS [dmonth], 
+    [_get_ok_days3].[podr] AS [podr], 
+    [_get_ok_days3].[cod] AS [cod], 
+    [_get_ok_days3].[nrec] AS [nrec]
+    FROM [dbo].[_get_ok_days3] AS [_get_ok_days3]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GENERALModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C_get_ok_days3">
+          <Key>
+            <PropertyRef Name="podr" />
+            <PropertyRef Name="cod" />
+          </Key>
+          <Property Name="fio" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="datbegin" Type="DateTime" Precision="3" />
+          <Property Name="doljn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dday" Type="Int32" />
+          <Property Name="dmonth" Type="Int32" />
+          <Property Name="podr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nrec" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="GENERALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C_get_ok_days3" EntityType="Self.C_get_ok_days3" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище GENERALModelContainer" CdmEntityContainer="GENERALEntities">
+          <EntitySetMapping Name="C_get_ok_days3">
+            <EntityTypeMapping TypeName="GENERALModel.C_get_ok_days3">
+              <MappingFragment StoreEntitySet="_get_ok_days3">
+                <ScalarProperty Name="fio" ColumnName="fio" />
+                <ScalarProperty Name="datbegin" ColumnName="datbegin" />
+                <ScalarProperty Name="doljn" ColumnName="doljn" />
+                <ScalarProperty Name="dday" ColumnName="dday" />
+                <ScalarProperty Name="dmonth" ColumnName="dmonth" />
+                <ScalarProperty Name="podr" ColumnName="podr" />
+                <ScalarProperty Name="cod" ColumnName="cod" />
+                <ScalarProperty Name="nrec" ColumnName="nrec" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

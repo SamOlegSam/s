@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body class="grad">
+    <style>
+        .grad {
+            background-image: url(/images/73.jpg);
+            background-repeat: round;
+        }
+
+        .mybtn:hover {
+            color: #fff;
+            background: #1E90FF;
+            -webkit-transition: all .3s linear;
+            -moz-transition: all .3s linear;
+        }
+        a:hover {
+            color: blue; /* Цвет ссылки при наведении на нее курсора мыши */
+            text-decoration: underline; /* Добавляем подчеркивание */
+        }
+    </style>
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" style="font-size:30px;" href="/Home/Index/">ОАО "Гомельтранснефть Дружба": Корпоративный портал</a>
+    </div>
+    <div class="row panel" style="margin-left:1px">
+
+        <div id="categories" class="col-xs-2" style="margin-left:5px; background-color:#1E90FF; border-radius:5px;">
+            <div style="text-align: center">
+                <img src="/images/emblema.png" width="120">
+            </div>
+            <div>
+                <hr>
+
+                <a class="btn btn-block btn-default btn-lg mybtn" href="/Home/Index/">Главная</a>
+                <a class="btn btn-block btn-default btn-lg mybtn" href="/Home/Vac/">Вакансии</a>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn">Уголок <wbr />избирателя</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn">Идеология</button>
+                <a class="btn btn-block btn-default btn-lg mybtn" href="/Home/Corruption/">Противодействие <wbr />коррупции</a>
+                <hr>
+                <h3 style="text-align:center; color:white;">Справочные системы</h3>
+                <hr>
+                <a class="btn btn-block btn-default btn-lg mybtn" href="/Home/Phone/">Телефонный <wbr />справочник</a>
+                <a class="btn btn-block btn-default btn-lg mybtn" href="/Home/BirthDay/">Дни <wbr />рождения</a>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn" href="">Рацианализаторство</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn" href="">Каталог <wbr />ТНПА</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn" href="">Поиск <wbr />МЦ</button>
+                <hr>
+                <h3 style="text-align:center; color:white;">Документация</h3>
+                <hr>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn">Системы управления <wbr /> предприятием <wbr />ISO 9000, <wbr /> ISO <wbr />14000, СТБ <wbr />18001</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn">Организационно -<wbr /> распорядительные <wbr />документы</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn">Справочно -<wbr /> технологическая <wbr />документация</button>
+                <button type="button" class="btn btn-block btn-default btn-lg mybtn" style="word-break: break-all">Журнал <wbr />"Наука и <wbr />технологии <wbr />трубопроводного <wbr />транспорта <wbr />нефти"</button>
+                <hr>
+            </div>
+        </div>
+        <div class="col-xs-8">
+            @RenderBody()
+        </div>
+        <footer class="container">
+            <center><p style="color: #1E90FF">&copy; @DateTime.Now.Year - ОАО Гомельтранснефть Дружба: Корпоративный портал</p></center>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+    <script src="~/Scripts/s.js"></script>
+
+</body>
+</html>

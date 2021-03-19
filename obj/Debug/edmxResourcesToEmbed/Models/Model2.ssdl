@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище PhoneModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="link_main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PARTID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Href" Type="varchar" MaxLength="200" />
+    <Property Name="HrefText" Type="varchar" MaxLength="200" />
+    <Property Name="Annotation" Type="varchar" MaxLength="255" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="link_parts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TYPEID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PartName" Type="varchar" MaxLength="50" />
+    <Property Name="PartImg" Type="varchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="link_type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+    <Property Name="TypeImg" Type="varchar" MaxLength="50" />
+    <Property Name="Sort" Type="int" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ph_department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ENTID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DepName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DepShortName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="KAT" Type="int" />
+  </EntityType>
+  <EntityType Name="ph_enterprise">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EntShortName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntAddress" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EntPhoneKod" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ParentGptn" Type="int" Nullable="false" />
+    <Property Name="KAT" Type="int" />
+    <Property Name="LEV" Type="int" />
+  </EntityType>
+  <EntityType Name="ph_main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DEPID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FIO" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Dolzhnost" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="HomePhoneCity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkPhoneCity" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EMail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Peiger" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhotoImg" Type="varchar" MaxLength="150" />
+    <Property Name="BirthDayDate" Type="datetime" />
+    <Property Name="StartWorkDate" Type="datetime" />
+    <Property Name="KAT" Type="int" />
+    <Property Name="PImage" Type="image" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="IDP" />
+    </Key>
+    <Property Name="IDP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIO" Type="nchar" MaxLength="100" />
+    <Property Name="WorkPhone" Type="nchar" MaxLength="50" />
+    <Property Name="Phone" Type="nchar" MaxLength="50" />
+    <Property Name="Doljnost" Type="nchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="S_News">
+    <Key>
+      <PropertyRef Name="ID_News" />
+    </Key>
+    <Property Name="ID_News" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="News_Date" Type="datetime" Nullable="false" />
+    <Property Name="N_News" Type="varchar" MaxLength="8000" />
+    <Property Name="Type" Type="int" />
+    <Property Name="L_Akt" Type="bit" />
+  </EntityType>
+  <Association Name="FK_link_main_link_parts">
+    <End Role="link_parts" Type="Self.link_parts" Multiplicity="1" />
+    <End Role="link_main" Type="Self.link_main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="link_parts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="link_main">
+        <PropertyRef Name="PARTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_parts_link_type">
+    <End Role="link_type" Type="Self.link_type" Multiplicity="1" />
+    <End Role="link_parts" Type="Self.link_parts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="link_type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="link_parts">
+        <PropertyRef Name="TYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ph_department_ph_enterprise">
+    <End Role="ph_enterprise" Type="Self.ph_enterprise" Multiplicity="1" />
+    <End Role="ph_department" Type="Self.ph_department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_enterprise">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ph_department">
+        <PropertyRef Name="ENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ph_main_ph_department">
+    <End Role="ph_department" Type="Self.ph_department" Multiplicity="1" />
+    <End Role="ph_main" Type="Self.ph_main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ph_main">
+        <PropertyRef Name="DEPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище PhoneModelContainer">
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="link_main" EntityType="Self.link_main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="link_parts" EntityType="Self.link_parts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="link_type" EntityType="Self.link_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ph_department" EntityType="Self.ph_department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ph_enterprise" EntityType="Self.ph_enterprise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ph_main" EntityType="Self.ph_main" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phone" EntityType="Self.Phone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="S_News" EntityType="Self.S_News" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_link_main_link_parts" Association="Self.FK_link_main_link_parts">
+      <End Role="link_parts" EntitySet="link_parts" />
+      <End Role="link_main" EntitySet="link_main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_parts_link_type" Association="Self.FK_link_parts_link_type">
+      <End Role="link_type" EntitySet="link_type" />
+      <End Role="link_parts" EntitySet="link_parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ph_department_ph_enterprise" Association="Self.FK_ph_department_ph_enterprise">
+      <End Role="ph_enterprise" EntitySet="ph_enterprise" />
+      <End Role="ph_department" EntitySet="ph_department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ph_main_ph_department" Association="Self.FK_ph_main_ph_department">
+      <End Role="ph_department" EntitySet="ph_department" />
+      <End Role="ph_main" EntitySet="ph_main" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

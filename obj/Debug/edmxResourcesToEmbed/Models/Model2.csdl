@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PhoneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="link_main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PARTID" Type="Guid" Nullable="false" />
+    <Property Name="Href" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="HrefText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Annotation" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="link_parts" Relationship="Self.FK_link_main_link_parts" FromRole="link_main" ToRole="link_parts" />
+  </EntityType>
+  <EntityType Name="link_parts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TYPEID" Type="Guid" Nullable="false" />
+    <Property Name="PartName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PartImg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="link_main" Relationship="Self.FK_link_main_link_parts" FromRole="link_parts" ToRole="link_main" />
+    <NavigationProperty Name="link_type" Relationship="Self.FK_link_parts_link_type" FromRole="link_parts" ToRole="link_type" />
+  </EntityType>
+  <EntityType Name="link_type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TypeImg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="msrepl_synctran_ts" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="link_parts" Relationship="Self.FK_link_parts_link_type" FromRole="link_type" ToRole="link_parts" />
+  </EntityType>
+  <EntityType Name="ph_department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="ENTID" Type="Guid" Nullable="false" />
+    <Property Name="DepName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DepShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="KAT" Type="Int32" />
+    <NavigationProperty Name="ph_enterprise" Relationship="Self.FK_ph_department_ph_enterprise" FromRole="ph_department" ToRole="ph_enterprise" />
+    <NavigationProperty Name="ph_main" Relationship="Self.FK_ph_main_ph_department" FromRole="ph_department" ToRole="ph_main" />
+  </EntityType>
+  <EntityType Name="ph_enterprise">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="EntName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EntShortName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EntAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EntPhoneKod" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ParentGptn" Type="Int32" Nullable="false" />
+    <Property Name="KAT" Type="Int32" />
+    <Property Name="LEV" Type="Int32" />
+    <NavigationProperty Name="ph_department" Relationship="Self.FK_ph_department_ph_enterprise" FromRole="ph_enterprise" ToRole="ph_department" />
+  </EntityType>
+  <EntityType Name="ph_main">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="DEPID" Type="Guid" Nullable="false" />
+    <Property Name="FIO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Dolzhnost" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HomePhoneCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WorkPhoneCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Peiger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhotoImg" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BirthDayDate" Type="DateTime" Precision="3" />
+    <Property Name="StartWorkDate" Type="DateTime" Precision="3" />
+    <Property Name="KAT" Type="Int32" />
+    <Property Name="PImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="ph_department" Relationship="Self.FK_ph_main_ph_department" FromRole="ph_main" ToRole="ph_department" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="IDP" />
+    </Key>
+    <Property Name="IDP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FIO" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Doljnost" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_News">
+    <Key>
+      <PropertyRef Name="ID_News" />
+    </Key>
+    <Property Name="ID_News" Type="Guid" Nullable="false" />
+    <Property Name="News_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="N_News" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="L_Akt" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_link_main_link_parts">
+    <End Role="link_parts" Type="Self.link_parts" Multiplicity="1" />
+    <End Role="link_main" Type="Self.link_main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="link_parts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="link_main">
+        <PropertyRef Name="PARTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_link_parts_link_type">
+    <End Role="link_type" Type="Self.link_type" Multiplicity="1" />
+    <End Role="link_parts" Type="Self.link_parts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="link_type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="link_parts">
+        <PropertyRef Name="TYPEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ph_department_ph_enterprise">
+    <End Role="ph_enterprise" Type="Self.ph_enterprise" Multiplicity="1" />
+    <End Role="ph_department" Type="Self.ph_department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_enterprise">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ph_department">
+        <PropertyRef Name="ENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ph_main_ph_department">
+    <End Role="ph_department" Type="Self.ph_department" Multiplicity="1" />
+    <End Role="ph_main" Type="Self.ph_main" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ph_department">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ph_main">
+        <PropertyRef Name="DEPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PhoneEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" />
+    <EntitySet Name="link_main" EntityType="Self.link_main" />
+    <EntitySet Name="link_parts" EntityType="Self.link_parts" />
+    <EntitySet Name="link_type" EntityType="Self.link_type" />
+    <EntitySet Name="ph_department" EntityType="Self.ph_department" />
+    <EntitySet Name="ph_enterprise" EntityType="Self.ph_enterprise" />
+    <EntitySet Name="ph_main" EntityType="Self.ph_main" />
+    <EntitySet Name="Phone" EntityType="Self.Phone" />
+    <EntitySet Name="S_News" EntityType="Self.S_News" />
+    <AssociationSet Name="FK_link_main_link_parts" Association="Self.FK_link_main_link_parts">
+      <End Role="link_parts" EntitySet="link_parts" />
+      <End Role="link_main" EntitySet="link_main" />
+    </AssociationSet>
+    <AssociationSet Name="FK_link_parts_link_type" Association="Self.FK_link_parts_link_type">
+      <End Role="link_type" EntitySet="link_type" />
+      <End Role="link_parts" EntitySet="link_parts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ph_department_ph_enterprise" Association="Self.FK_ph_department_ph_enterprise">
+      <End Role="ph_enterprise" EntitySet="ph_enterprise" />
+      <End Role="ph_department" EntitySet="ph_department" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ph_main_ph_department" Association="Self.FK_ph_main_ph_department">
+      <End Role="ph_department" EntitySet="ph_department" />
+      <End Role="ph_main" EntitySet="ph_main" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

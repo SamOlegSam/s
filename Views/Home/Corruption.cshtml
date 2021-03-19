@@ -1,0 +1,42 @@
+﻿
+<center><H2 style="color: #1E90FF">ПРОТИВОДЕЙСТВИЕ КОРРУПЦИИ</H2></center>
+<hr>
+    <table>
+        @foreach (var item in ViewBag.li)
+        {
+            Uri uri = new Uri(@item);
+
+            <tr>
+                <td>
+                    @if (System.IO.File.Exists(item))
+                    {
+
+                        if (item.Contains("pdf") || item.Contains("PDF") || item.Contains("Pdf"))
+                        {
+                            <a href="http:s\@item.Remove(0, 23)" , target="_blank"><h3><img src="/Images/pdf.png" width="50"> @System.IO.Path.GetFileName(uri.LocalPath)</h3></a>
+                        }
+                        else
+                        {
+                            if (item.Contains(".doc") || item.Contains(".docx") || item.Contains(".Doc") || item.Contains(".DOC") || item.Contains(".Docx") || item.Contains(".DOCX"))
+                            {
+                                <a href="http:s\@item.Remove(0, 23)" , target="_blank"><h3><img src="/Images/doc.png" width="50"> @System.IO.Path.GetFileName(uri.LocalPath)</h3></a>
+                            }
+                            else
+                            {
+                                <a href="http:s\@item.Remove(0, 23)" , target="_blank"><h3><img src="/Images/other.png" width="50"> @System.IO.Path.GetFileName(uri.LocalPath)</h3></a>
+                            }
+                        }
+
+
+                    }
+
+                    @if (System.IO.Directory.Exists(item))
+
+                    {
+                        <a href="http:s\@item.Remove(0, 23)"  ><h3><img src="/Images/pap.png" width="50">[@System.IO.Path.GetFileName(uri.LocalPath)]</h3></a>
+                        @*<button style="width: 200px; height: 60px;border-radius:10px; font-size:1.4vw;" type="submit" class="btn btn-info" onclick="Export('http:s\\@item.Remove(0, 23)')">[@System.IO.Path.GetFileName(uri.LocalPath)]</button>*@
+                    }
+                </td>
+            </tr>
+        }
+        </table>
